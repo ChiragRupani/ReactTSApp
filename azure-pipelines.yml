@@ -16,9 +16,9 @@ steps:
     displayName: 'Install Node.js'
 
   - script: |
-    git config --local user.email "action@github.com"
-    git config --local user.name "GitHub Action"
-    npm install --no-audit --progress=false
-    npm run cicdcoverage
-    npm run deploy
-  displayName: 'npm install and deploy'
+      git config --local user.email "action@github.com"
+      git config --local user.name "GitHub Action"
+      npm install --no-audit --progress=false
+      npm run cicdcoverage
+      npm run deploy
+    displayName: 'npm install and deploy'
