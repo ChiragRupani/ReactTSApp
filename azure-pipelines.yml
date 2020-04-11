@@ -46,13 +46,13 @@ steps:
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'JUnit'
-      testResultsFiles: '$(System.DefaultWorkingDirectory)/ReactTSApp/junit.xml'
+      testResultsFiles: '$(System.DefaultWorkingDirectory)/junit.xml'
       testRunTitle: 'Publish React Tests Results'
 
   - task: PublishCodeCoverageResults@1
     inputs:
       codeCoverageTool: 'Cobertura'
-      summaryFileLocation: '$(System.DefaultWorkingDirectory)/ReactTSApp/coverage/cobertura-coverage.xml'
-      pathToSources: '$(System.DefaultWorkingDirectory)/ReactTSApp'
-      reportDirectory: '$(System.DefaultWorkingDirectory)/ReactTSApp/coverage/'
+      summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
+      pathToSources: '$(System.DefaultWorkingDirectory)'
+      reportDirectory: '$(System.DefaultWorkingDirectory)/coverage/'
       failIfCoverageEmpty: true
