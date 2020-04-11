@@ -41,7 +41,7 @@ steps:
     displayName: 'npm install and deploy'
 
   - bash: |
-      ls $(System.DefaultWorkingDirectory)/ReactTSApp  
+      ls $(System.DefaultWorkingDirectory)      
 
   - task: PublishTestResults@2
     inputs:
