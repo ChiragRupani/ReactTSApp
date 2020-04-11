@@ -1,6 +1,7 @@
 {
   "name": "tsapp",
   "version": "0.1.0",
+  "homepage": "https://chiragrupani.github.io/ReactTSApp/",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -11,7 +12,9 @@
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "coverage": "npm test -- --coverage",
     "lint": "eslint ./src/**/*.ts ./src/**/*.tsx",
-    "cicdcoverage": "npm test -- --coverage --ci --reporters=default --reporters=jest-junit --coverageReporters=cobertura --coverageReporters=text"
+    "cicdcoverage": "npm test -- --coverage --ci --reporters=default --reporters=jest-junit --coverageReporters=cobertura --coverageReporters=text",
+    "predeploy": "npm run build:Release",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^16.13.1",
@@ -34,18 +37,19 @@
     "@types/react-dom": "16.9.6",
     "@types/react-router-dom": "^5.1.3",
     "@types/reactstrap": "^8.4.2",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
     "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
-    "@typescript-eslint/eslint-plugin": "^2.27.0",
-    "@typescript-eslint/parser": "^2.27.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-flowtype": "^4.7.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
+    "gh-pages": "^2.2.0",
     "jest-junit": "^10.0.0"
   },
   "eslintConfig": {

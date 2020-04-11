@@ -2,17 +2,24 @@ import * as React from 'react';
 import './App.css';
 
 export default class App extends React.Component<{}, {}> {
- componentDidMount(){
-   this.setTheme();
- }
+  componentDidMount() {
+    this.setTheme();
+  }
+
   setTheme() {
-      if (window.matchMedia('(prefers-color-scheme: dark)').media === '(prefers-color-scheme: dark)') {
-        document.querySelector('body')?.classList.add('dark-theme');
-      }
-      else  {
-          document.querySelector('body')?.classList.remove('dark-theme');
-      }
-  } 
+    const body = document.querySelector('body');
+    if (body == null) {
+      return;
+    }
+    if (
+      window.matchMedia('(prefers-color-scheme: dark)').media !==
+      '(prefers-color-scheme: light)'
+    ) {
+      body.classList.add('dark-theme');
+    } else {
+      body.classList.remove('dark-theme');
+    }
+  }
 
   render() {
     return (
