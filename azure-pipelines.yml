@@ -31,7 +31,8 @@ steps:
       retryCount: '2'
 
   - script: |
-      mkdir ~/.ssh && mv $secureFile.SECUREFILEPATH ~/.ssh/id_rsa
+      mkdir ~/.ssh -p
+      mv $secureFile.SECUREFILEPATH ~/.ssh/id_rsa
       chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa
       ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       git config --global --add url."git@github.com:".insteadOf "https://github.com/"
