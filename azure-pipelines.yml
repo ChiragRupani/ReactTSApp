@@ -39,3 +39,11 @@ steps:
       npm run cicdcoverage
       npm run deploy
     displayName: 'npm install and deploy'
+
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      codeCoverageTool: 'Cobertura'
+      summaryFileLocation: '$(System.DefaultWorkingDirectory)/TSApp/coverage/cobertura-coverage.xml'
+      pathToSources: '$(System.DefaultWorkingDirectory)/TSApp'
+      additionalCodeCoverageFiles: '$(System.DefaultWorkingDirectory)/TSApp/junit.xml'
+      failIfCoverageEmpty: true
