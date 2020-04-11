@@ -67,7 +67,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "**/*.{tsx}",
+      "**/*.tsx",
       "!**/node_modules/**",
       "!**/coverage/**",
       "!**/serviceWorker.ts",

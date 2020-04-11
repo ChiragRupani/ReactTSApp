@@ -64,3 +64,4 @@ typings/
 # Next.js build output
 .next
 
+junit.xml
