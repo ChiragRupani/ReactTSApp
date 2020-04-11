@@ -18,16 +18,11 @@ steps:
       versionSpec: '12.x'
     displayName: 'Install Node.js'
 
-  - task: DownloadSecureFile@1
-    name: secureFile
-    inputs:
-      secureFile: 'id_rsa'
-    
   - task: InstallSSHKey@0
     inputs:
       knownHostsEntry: 'github.com,140.82.112.3 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
       sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJy3dTMgSg8ts5XrhKAu562BXS0xUyldKf6/OCpAx/KCIMg+gjyH+f91MX7bIwlJC8pN31eVif8uRbARVeJ4LvyY2NDbRS1P9VetdPyC6mk3hrTaRNYj9NaUBvhWes5tlNw6xK4GDwl1kA1XlerTOqCrBLN0Z6IWjhfmV4QWOTBqrz9TQhW0FW/RqcF1rXr4fNX1cf99YyumSJ3pFM58AjsknRrN73MFfdTDrFGHeeSSMa1v3trvS4DtwfS4pbzj10TTskyrz7hLzGYgL8y/xWzBo6JUGrDxi9pqH6NwXjwwV5H4zTgy/yIM7sWPPcpYriACCJEJO44O0obtopsb1/c0wx96TWqHwFaw6c90GjlvtC/aIPFy5x10L6MQ6I3HYQEjxY73pYWuGfFewlHBKSDeZ4A0mUii3zxceE+eAjICZl3g/GrdQYqjk8dKzCQJgzu2T09pLioebuaT51Svmkt+nx9fXGDehzySJrj6BFi5NAbBDG0Lr2TmGVeQY5yPQyN6OK0upgTm/YL9HcMfg9vbPiLtTffRvKHS/uHZejjGOEChAg8Mb6/6wWlqNg1ahnmZvVdYi4VUbCVht7wWa8OcUVNTUH/XfjZqOjxz4fgVLuz0JVaVJBgGezcMJpM6V7BzVYGqFRzKlK7toPSZu6WhLSmA26RZdKQ5cgaZOF1Q== pubreacttogh'
-      sshKeySecureFile: $(secureFile.secureFilePath) 
+      sshKeySecureFile: b8c31efc-4656-4b72-8910-296374ceb7f4
 
   - script: |
       git config --global --add url."git@github.com:".insteadOf "https://github.com/"
