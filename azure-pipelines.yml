@@ -19,6 +19,7 @@ steps:
     displayName: 'Install Node.js'
 
   - script: |
+      git config --global --add url."git@github.com:".insteadOf "https://github.com/"
       git config --local user.email "action@github.com"
       git config --local user.name "GitHub Action"
       npm install --no-audit --progress=false
