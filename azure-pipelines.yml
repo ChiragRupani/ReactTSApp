@@ -17,20 +17,21 @@ steps:
     inputs:
       versionSpec: '12.x'
     displayName: 'Install Node.js'
-
-  - task: InstallSSHKey@0
-    inputs:
-      knownHostsEntry: 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
-      sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+OosZ7R0ftQIM0SThuNXJ3oDIPLqvo+DWdM3LF1/2LnrfO8U1Lyvsff8jN+PsRq/LsjHNhRMQFT8hA1axySTjf748dyth9TLT7Tl88Ddjx/b4FKRinskIMOyt8cJpbNYhg+CJWExuYTC1f8DBld1hE1rrDOKPaBfrRvpEKTpzs3YHpejdwrQgeO9cVyXsAjjXaku5b1my7EATuDrqOxH0LznLYxHdBuRGLKNJd4cMmSUOZpKSgfjEYbJNCVmRCutwJOg8dm9PycYVyVfaaV16FvvKEhV9OndkuxosDWzMCe43WOrmtTMHtpNep0uBaQb6kHQ2v/5YV0RUkPE2WPAnNUS8j1YsqOFBEfOK0VH+NOqcQ9wnUqsTtOjrp3its1pQjdP5yXeUgwnRp06O4m7YcASf3SEWVpWGkpAuGPPXeoqxVY4JKXYzQprSjEeHZ/VlgSzXdPyKhfXlpznsgrZRub+u4qQxfhpL2G1AH0DLdctB5dvIsGsxHMCKNAh66wOa0w610NskQUKcFPLmcmCbGwBbWILQHtRjMImnXE4aqoqI3EJdgkscH0fY8pNED4qdrKhU5NkYO9aqBKsIIe1fXbvMHPkhbaqogjIgSnm0QrOl1yT8U5tyCBKnuUcfMk9Nmri4enxqn6iW66Bc3Nl/Q+cjFFjQp0DJYTP28wWhvQ== action@github.com'
-      sshKeySecureFile: 'b998cfa3-786e-4c8a-a409-4fab58b38c29'
+ 
   - task: DownloadSecureFile@1
     name: mySecureFile
     inputs:
       secureFile: 'b998cfa3-786e-4c8a-a409-4fab58b38c29'
       retryCount: '2'
 
+  - task: InstallSSHKey@0
+    inputs:
+      knownHostsEntry: 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
+      sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+OosZ7R0ftQIM0SThuNXJ3oDIPLqvo+DWdM3LF1/2LnrfO8U1Lyvsff8jN+PsRq/LsjHNhRMQFT8hA1axySTjf748dyth9TLT7Tl88Ddjx/b4FKRinskIMOyt8cJpbNYhg+CJWExuYTC1f8DBld1hE1rrDOKPaBfrRvpEKTpzs3YHpejdwrQgeO9cVyXsAjjXaku5b1my7EATuDrqOxH0LznLYxHdBuRGLKNJd4cMmSUOZpKSgfjEYbJNCVmRCutwJOg8dm9PycYVyVfaaV16FvvKEhV9OndkuxosDWzMCe43WOrmtTMHtpNep0uBaQb6kHQ2v/5YV0RUkPE2WPAnNUS8j1YsqOFBEfOK0VH+NOqcQ9wnUqsTtOjrp3its1pQjdP5yXeUgwnRp06O4m7YcASf3SEWVpWGkpAuGPPXeoqxVY4JKXYzQprSjEeHZ/VlgSzXdPyKhfXlpznsgrZRub+u4qQxfhpL2G1AH0DLdctB5dvIsGsxHMCKNAh66wOa0w610NskQUKcFPLmcmCbGwBbWILQHtRjMImnXE4aqoqI3EJdgkscH0fY8pNED4qdrKhU5NkYO9aqBKsIIe1fXbvMHPkhbaqogjIgSnm0QrOl1yT8U5tyCBKnuUcfMk9Nmri4enxqn6iW66Bc3Nl/Q+cjFFjQp0DJYTP28wWhvQ== action@github.com'
+      sshKeySecureFile: 'b998cfa3-786e-4c8a-a409-4fab58b38c29'
+
   - bash: |
-      echo $(builmySecureFile.secureFilePathdName)
+      echo $(mySecureFile.secureFilePath)
 
   - script: |
       mkdir ~/.ssh -p
